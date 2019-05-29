@@ -1,12 +1,12 @@
-How to compact VirtualBox Linux Guest:
+### How to compact VirtualBox Linux Guest:
 
-On Guest:
+## On Guest:
 
 sudo dd if=/dev/zero of=/bigemptyfile bs=4096k status=progress
 
 sudo rm -f /bigemptyfile
 
-On Host:
+## On Host:
 
 Close VM and then do a "Clone" of it in VirtualBox.
 
