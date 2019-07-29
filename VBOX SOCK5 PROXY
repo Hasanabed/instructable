@@ -1,0 +1,25 @@
+INSTALL PROXY CHAINS:
+
+sudo apt-get install proxychains
+
+Execute this command: 
+
+ssh -vfCND1080 -l login_name -p port remote_machine_address
+
+v argument makes verbose output, so you may ommit it
+f argument makes ssh session run in the background
+C argument enables compression for all data
+N argument disables remote command to the machine we connect
+D1080 means to make local dynamic listening poxy at port 1080
+login_name is the username of our remote machine
+port is the SSH port of remote machine, usually 22
+remote_machine_address is the address of our remote machine, either IP number or domain
+
+Edit the /etc/proxychains.conf file. Make sure you have these lines uncommented.
+
+strict_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks5 127.0.0.1 1080
