@@ -1,0 +1,17 @@
+To configure NFS access @ RPI:
+
+1) Make sure libraries for NFS are installed on the RPI
+
+2) Set up the share directory and enable NFS on the NAS drive. Verify the mountpoint is available by typing this command on the RPI:
+showmount -e 192.168.1.x 
+  where 192.168.x is the ip address of the local NAS drive.
+3) Edit /etc/fstab and add this line at the end:
+192.168.1.x:/volume1/homes /home/pi/NASdrive nfs
+
+4) Use the following command to test if automount is working:
+sudo mount -a
+
+5) If the mount -a work, but the RPI is not showing the NFS when rebooting, do this steps:
+  sudo raspi-config
+  select boot options, wait for network interfaces to initialize
+6) test with the "df" command
