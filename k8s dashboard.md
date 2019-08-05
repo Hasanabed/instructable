@@ -1,4 +1,4 @@
-### Deploy K8s Dashboard:
+# Deploy K8s Dashboard:
 
 ## Deploy Dashboard:
 
